@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../bower_components/ionic/release/css/ionic.css" />
+    <script src="../bower_components/ionic/release/js/ionic.bundle.js"></script>
+    <script src="../dist/flex-timepicker.bundle.min.js"></script>
+</head>
+
+<body ng-app="test">
+    <div ng-controller="TestController">
+        <flex-timepicker options="opts" selected-time="myTime"></flex-timepicker>
+        {{myTime}}
+        
+    </div>
+
+
+    <script>
+        angular.module('test', ['flextimepicker'])
+        .controller('TestController', function($scope){
+            $scope.opts={
+                step:10,
+                format:12
+            };
+            $scope.myTime = null;
+
+        });
+    </script>
+</body>
+
+</html>

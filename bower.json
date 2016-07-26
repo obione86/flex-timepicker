@@ -1,0 +1,31 @@
+{
+  "name": "flex-timepicker",
+  "version": "0.1.1",
+  "authors": [
+    "obione86 <obi.onuorah@gmail.com>"
+  ],
+  "description": "An inline timepicker directive for Ionic framework",
+  "main": [
+    "./dist/flex-timepicker.bundle.min.js"
+  ],
+  "keywords": [
+    "flex-timepicker",
+    "ionic",
+    "time picker",
+    "inline time picker",
+    "time chooser directive",
+    "time picker for ionic framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/obione86/flex-timepicker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": ">=0.9.27"
+  }
+}
