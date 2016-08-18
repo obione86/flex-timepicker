@@ -4,13 +4,13 @@
     var app = angular
         .module('flextimepicker', [])
         .directive('flexTimepicker', flexTimepicker);
-    
+
     function flexTimepicker() {
 
         var template =
             '<div class="ionic_timepicker_popup">' +
             '<div class="row" ng-class="{\'padding_left_15px\':time.format == 12}">' +
-            '<div class="col col-15" ng-class="{\'col-offset-25 col-15\':time.format == 24}">' +
+            '<div class="col col-25" ng-class="{\'col-offset-25 col-25\':time.format == 24}">' +
             '<button type="button" class="button button-clear button-small button-dark time_picker_arrows" ng-click="increaseHours()">' +
             '<i class="icon ion-chevron-up"></i></button>' +
             '<div ng-bind="time.hours" class="time_picker_box_text"></div>' +
@@ -18,13 +18,13 @@
             '<i class="icon ion-chevron-down"></i></button>' +
             '</div>' +
             '<label class="col col-10 time_picker_colon"> : </label>' +
-            '<div class="col col-15" ng-class="{\'col-15\':time.format == 24}">' +
+            '<div class="col col-25" ng-class="{\'col-25\':time.format == 24}">' +
             '<button type="button" class="button button-clear button-small button-dark time_picker_arrows" ng-click="increaseMinutes()"><i class="icon ion-chevron-up"></i></button>' +
             '<div ng-bind="time.minutes" class="time_picker_box_text"></div>' +
             '<button type="button" class="button button-clear button-small button-dark time_picker_arrows" ng-click="decreaseMinutes()"><i class="icon ion-chevron-down"></i></button>' +
             '</div>' +
             '<label class="col col-10 time_picker_colon" ng-if="time.format == 12"> : </label>' +
-            '<div class="col col-15" ng-if="time.format == 12">' +
+            '<div class="col col-25" ng-if="time.format == 12">' +
             '<button type="button" class="button button-clear button-small button-dark time_picker_arrows" ng-click="changeMeridian()"><i class="icon ion-chevron-up"></i></button>' +
             '<div ng-bind="time.meridian" class="time_picker_box_text"></div>' +
             '<button type="button" class="button button-clear button-small button-dark time_picker_arrows" ng-click="changeMeridian()"><i class="icon ion-chevron-down"></i></button>' +
@@ -48,6 +48,7 @@
     }
 
     Controller.$inject = ['$scope', '$filter'];
+
     function Controller($scope, $filter) {
         $scope.today = resetHMSM(new Date()).getTime();
         $scope.time = {};
@@ -140,8 +141,7 @@
                     if ($scope.time.hours > 12) {
                         $scope.time.hours -= 12;
                     }
-                }
-                else {
+                } else {
                     $scope.time.meridian = 'AM';
                 }
             }
